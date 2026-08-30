@@ -118,8 +118,6 @@ int main() {
 	//	0,1,3,
 	//};
 
-
-
 	GLuint VBO, VAO,EBO;
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
