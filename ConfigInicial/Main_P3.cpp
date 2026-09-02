@@ -221,10 +221,10 @@ int main() {
 		ourShader.Use();
 		glm::mat4 model=glm::mat4(1);
 		glm::mat4 view=glm::mat4(1);
-	
-	    view = glm::translate(view, glm::vec3(0.0f,0.0f,-17.0f));
-		model = glm::rotate( model, 0.5f, glm::vec3( 1.0f, 3.0f, 0.0f ) ); // use to compare orthographic and perspective projection
-		model = glm::scale(model, glm::vec3(3.0f, 5.0f, 4.0f));
+	                                           //x   y    z
+	    view = glm::translate(view, glm::vec3(5.0f,-6.0f,-20.0f));//coordenadas
+		model = glm::rotate( model, 0.5f, glm::vec3( 0.0f, 5.0f, 0.0f ) ); // use to compare orthographic and perspective projection
+		model = glm::scale(model, glm::vec3(5.0f, 5.0f, 5.0f)); //tamaño del cubo
 		//view = glm::translate( view, glm::vec3( screenWidth / 2, screenHeight / 3,-500.0f ) ); // use with orthographic projection
 		
 		GLint modelLoc = glGetUniformLocation(ourShader.Program, "model");
@@ -237,32 +237,56 @@ int main() {
 		
 
 		glBindVertexArray(VAO);
+
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
 		//cubo 2
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(7.0f, 0.0f, 0.0f));
-		model = glm::rotate(model, 45.0f, glm::vec3(0.0f, 0.0f, 3.0f)); // use to compare orthographic and perspective projection
-		model = glm::scale(model, glm::vec3(6.0f, 2.0f, 5.0f));
+		//                                       x     y     z
+		model = glm::translate(model, glm::vec3(-10.0f, 0.0f, 0.0f));// coordendadas
+		model = glm::rotate(model, 45.0f, glm::vec3(0.0f, -3.0f, 0.0f)); // use to compare orthographic and perspective projection
+		model = glm::scale(model, glm::vec3(5.0f, 5.0f, 5.0f));//tamaño del cubo
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		//cubo 3
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-7.0f, 0.0f, 0.0f));
-		model = glm::rotate(model, 45.0f, glm::vec3(0.0f, 0.0f, 9.0f)); // use to compare orthographic and perspective projection
-		model = glm::scale(model, glm::vec3(8.0f, 1.0f, 8.0f));
+		//                                       x     y     z
+		model = glm::translate(model, glm::vec3(-5.0f, 5.0f, 0.0f));// coordendadas
+		//                                          x      y     z
+		model = glm::rotate(model, 45.0f, glm::vec3(3.0f, 3.0f, 0.0f)); //Girara sobre el eje
+		model = glm::scale(model, glm::vec3(4.0f, 4.0f, 4.0f));//tamaño del cubo
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		
 		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		//cubo 4
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		model = glm::mat4(1);
+		//                                       x     y     z
+		model = glm::translate(model, glm::vec3(-2.0f, 9.0f, 0.0f));// coordendadas
+		//                                          x      y     z
+		model = glm::rotate(model, 45.0f, glm::vec3(-5.0f, 8.0f, 0.0f)); //Girara sobre el eje
+		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));//tamaño del cubo
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		//cubo 5
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		model = glm::mat4(1);
+		//                                       x     y     z
+		model = glm::translate(model, glm::vec3(-8.0f, 9.0f, 0.0f));// coordendadas
+		//                                          x      y     z
+		model = glm::rotate(model, 45.0f, glm::vec3(7.0f, -3.0f, 0.0f)); //Girara sobre el eje
+		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));//tamaño del cubo
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
 		glBindVertexArray(0);
 
-
-
+// L U I S 
 		
-		
-		
-
 		// Swap the screen buffers
 		glfwSwapBuffers(window);
 	
