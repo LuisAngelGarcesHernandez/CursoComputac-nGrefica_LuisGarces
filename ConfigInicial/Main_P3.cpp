@@ -1,6 +1,6 @@
-//Previo #3
+//Practica #3
 //Garcés Hernández Luis Angel
-//Fecha de Entrega: 01/09/2026
+//Fecha de Entrega: 05/09/2026
 //NCuenta: 319199488
 #include<iostream>
 
@@ -33,7 +33,7 @@ int main() {
 
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Proyecciones y transformaciones basicas Previo#3 Garcés Hernández Luis Angel", nullptr, nullptr);
+	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Proyecciones y transformaciones basicas Practica#3 Garcés Hernández Luis Angel", nullptr, nullptr);
 
 	int screenWidth, screenHeight;
 
